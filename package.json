@@ -1,10 +1,13 @@
 {
   "name": "jsxnat",
   "description": "An XNAT API Wrapper for JavaScript",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "homepage": "https://github.com/WoonchanCho/jsxnat/#readme",
   "license": "MIT",
-  "keywords": ["jsxnat", "xnat"],
+  "keywords": [
+    "jsxnat",
+    "xnat"
+  ],
   "source": "src/index.js",
   "main": "dist/node/jsxnat.js",
   "module": "dist/node/jsxnat.module.js",
