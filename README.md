@@ -15,7 +15,7 @@ yarn add jsxnat
 ```
 
 ## API Documentation
-API documentation is hosted on github pages, and is generated from JSDoc
+[API documentation](https://woonchancho.github.io/jsxnat/) is hosted on github pages, and is generated from JSDoc
 
 ## Usage
 
