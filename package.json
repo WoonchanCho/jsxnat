@@ -2,6 +2,7 @@
   "name": "jsxnat",
   "description": "An XNAT API Wrapper for JavaScript",
   "version": "0.0.2",
+  "homepage": "https://github.com/WoonchanCho/jsxnat/#readme",
   "license": "MIT",
   "keywords": ["jsxnat", "xnat"],
   "source": "src/index.js",
