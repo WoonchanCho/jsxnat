@@ -1,8 +1,9 @@
 {
   "name": "jsxnat",
   "description": "An XNAT API Wrapper for JavaScript",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
+  "keywords": ["jsxnat", "xnat"],
   "source": "src/index.js",
   "main": "dist/node/jsxnat.js",
   "module": "dist/node/jsxnat.module.js",
