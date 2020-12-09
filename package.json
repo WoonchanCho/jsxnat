@@ -1,0 +1,38 @@
+{
+  "name": "jsxnat",
+  "description": "An XNAT API Wrapper for JavaScript",
+  "version": "0.0.1",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "dist/node/jsxnat.js",
+  "module": "dist/node/jsxnat.module.js",
+  "unpkg": "dist/node/jsxnat.umd.js",
+  "browser": "dist/web/jsxnat.umd.js",
+  "scripts": {
+    "dev": "DEBUG=jsxnat:* nodemon -r esm src/dev.js",
+    "build": "yarn build:web && yarn build:node && yarn build:docs",
+    "build:web": "microbundle --external none --target web --output dist/web --name JsXnat",
+    "build:node": "microbundle --external none --target node  --output dist/node",
+    "build:docs": "npx jsdoc -c jsdoc.conf.js -r README.md",
+    "watch:doc-src": "npx nodemon --exec 'yarn build:docs' --watch src",
+    "watch:doc-output": "npx livereload out",
+    "watch:docs": "yarn watch:doc-output & yarn watch:doc-src",
+    "clean": "shx rm -rf docs && shx rm -rf dist"
+  },
+  "devDependencies": {
+    "livereload": "^0.9.1",
+    "microbundle": "^0.12.4",
+    "nodemon": "^2.0.6",
+    "shx": "^0.3.3"
+  },
+  "dependencies": {
+    "debug": "^4.3.1",
+    "esm": "^3.2.25",
+    "isomorphic-form-data": "^2.0.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "js-base64": "^3.6.0",
+    "jsdoc": "~3.6.6",
+    "query-string": "^6.13.7",
+    "xmldom": "^0.4.0"
+  }
+}
