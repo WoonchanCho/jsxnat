@@ -1,6 +1,8 @@
 # JsXnat
 
 `JsXnat` provides a higher-level JavaScript wrapper around XNAT's rest API.
+This library tries to be isomporphic, so most of the functionality works in both Node.js and Broswer environment.
+
 
 ## Install
 JsXnat is available from npm or unpkg.

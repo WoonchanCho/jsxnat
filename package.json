@@ -1,6 +1,6 @@
 {
   "name": "jsxnat",
-  "description": "An XNAT API Wrapper for JavaScript",
+  "description": "An isomorphic XNAT API Wrapper for JavaScript",
   "version": "0.1.0",
   "homepage": "https://github.com/WoonchanCho/jsxnat/#readme",
   "license": "MIT",
