@@ -25,7 +25,7 @@ yarn add jsxnat
 
 #### Node.js with the CommonJS module system
 ```javascript
-import JsXnat from 'jsxnat';
+const JsXnat = require('jsxnat');
 
 var jsXnat = new JsXnat('http://localhost:8080', 'username', 'password');
 const projectApi = jsXnat.getProjectApi();
