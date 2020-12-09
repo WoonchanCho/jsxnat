@@ -1,0 +1,4254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: Scan</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: Scan</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>Scan<span class="signature">(jsXnat)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>Scan related API</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="Scan"><span class="type-signature"></span>new Scan<span class="signature">(jsXnat)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Constructor</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Constructor</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>jsXnat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">JsXnat</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="ScanXmlPathShortcuts"><span class="type-signature"></span>ScanXmlPathShortcuts<span class="type-signature"></span></h4>
+
+
+<p class="summary"><p>Scan Data REST XML Path Shortcuts</p>.</p>
+
+
+
+<div class="description">
+    <p>Scan Data REST XML Path Shortcuts</p>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createFolder"><span class="type-signature"></span>createFolder<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, resourceLabel, format, tags, contents, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Create A New Project Resource Folder</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Create A New Project Resource Folder</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourceLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>resource label (folder name)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Specify a string format descriptor for this resource folder.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tags</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Specify a comma-separated list of tags for this resource folder.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>contents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Specify a string description of the resource folder's content.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line332">line 332</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="createScan"><span class="type-signature"></span>createScan<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, xsiType, json, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Add Scan To An Image Session</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Add Scan To An Image Session</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xsiType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>refer to ScanXmlPathShortcuts or XML Path Shortcuts: https://wiki.xnat.org/display/XAPI/Subject+Data+REST+XML+Path+Shortcuts</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line133">line 133</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteFile"><span class="type-signature"></span>deleteFile<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, resourceIdOrLabel, filename, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Delete A Project Resource File</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Delete A Project Resource File</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourceIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>resource id or label (folder name)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line427">line 427</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteFolder"><span class="type-signature"></span>deleteFolder<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, resourceIdOrLabel, safe, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Delete A Project Resource Folder</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Delete A Project Resource Folder</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourceIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>resource id or label (folder name)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>safe</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Optional. if throw errors if files exists in the resource folder</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line398">line 398</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteScan"><span class="type-signature"></span>deleteScan<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, removeFiles, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Modify Scan Metadata</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Modify Scan Metadata</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removeFiles</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Optional query param. Defaults to &quot;FALSE&quot;, which will leave files in the file system after deleting the experiment record in Postgres. When this param is set to &quot;TRUE&quot;, those files are permanently deleted.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line190">line 190</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getDicomDump"><span class="type-signature"></span>getDicomDump<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, fields, format, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>returns dicom header dump for a scan</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>returns dicom header dump for a scan</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fields</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. tag name or tag number to display</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line218">line 218</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>a list of matched entities</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getFile"><span class="type-signature"></span>getFile<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, resourceIdOrLabel, filename, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Get A Listing Of Resource Files Stored With A Project</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Get A Listing Of Resource Files Stored With A Project</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourceIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>resource id or label (folder name)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line302">line 302</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getFiles"><span class="type-signature"></span>getFiles<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, sortBy, format, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Get A Listing Of Resource Files Stored With A Project</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Get A Listing Of Resource Files Stored With A Project</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sortBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Sort the returned results by one or more parameters in the Result array. Multiple parameters can be provided</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line275">line 275</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getFolders"><span class="type-signature"></span>getFolders<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, sortBy, format, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Get A Listing Of Resource Folders Stored With A Subject</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Get A Listing Of Resource Folders Stored With A Subject</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sortBy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Sort the returned results by one or more parameters in the Result array. Multiple parameters can be provided</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line248">line 248</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getScanResources"><span class="type-signature"></span>getScanResources<span class="signature">(options, scanId, format, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Get A Listing Of A Single Scan's Resources</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Get A Listing Of A Single Scan's Resources</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experient identification options</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. experiment id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. experiment label</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line107">line 107</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getScans"><span class="type-signature"></span>getScans<span class="signature">(options, format, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Get A Listing Of Scans From An Image Session</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Get A Listing Of Scans From An Image Session</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experient identification options</p>
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. experiment id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. experiment label</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>format</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="updateScan"><span class="type-signature"></span>updateScan<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, xsiType, json, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Modify Scan Metadata</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Modify Scan Metadata</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>xsiType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>xsiType e.g., xnat:mrScanData</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>json</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>refer to ScanXmlPathShortcuts or XML Path Shortcuts: https://wiki.xnat.org/display/XAPI/Subject+Data+REST+XML+Path+Shortcuts</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="uploadFile"><span class="type-signature"></span>uploadFile<span class="signature">(projectId, subjectIdOrLabel, experimentIdOrLabel, scanId, resourceIdOrLabel, filename, file, overwrite, cb)</span><span class="type-signature"></span></h4>
+    
+
+    
+    <p class="summary"><p>Upload A New Project Resource File</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Upload A New Project Resource File</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>projectId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>project id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>subjectIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>subject id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>experimentIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>experiment id or label</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>scanId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>scan id</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resourceIdOrLabel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>resource id or label (folder name)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>filename</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>filename</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>file</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>file buffer (need to check if this is compatilable from browser)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>overwrite</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>Optional. overwrite the file if the file that has the same filename already exists in the same location</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>optional callback function</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="XnatDataMgmt_Scan.js.html">XnatDataMgmt/Scan.js</a>, <a href="XnatDataMgmt_Scan.js.html#line366">line 366</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>none</p>
+</div>
+
+
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Anonymization.html">Anonymization</a></li><li><a href="Archive.html">Archive</a></li><li><a href="Audit.html">Audit</a></li><li><a href="Automation.html">Automation</a></li><li><a href="CatalogRefresh.html">CatalogRefresh</a></li><li><a href="DataProcessing.html">DataProcessing</a></li><li><a href="DataTypeSchema.html">DataTypeSchema</a></li><li><a href="DicomConfig.html">DicomConfig</a></li><li><a href="DicomDump.html">DicomDump</a></li><li><a href="DicomScp.html">DicomScp</a></li><li><a href="Email.html">Email</a></li><li><a href="Experiment.html">Experiment</a></li><li><a href="FileMover.html">FileMover</a></li><li><a href="ImageAssessor.html">ImageAssessor</a></li><li><a href="module.exports.html">exports</a></li><li><a href="OtherService.html">OtherService</a></li><li><a href="Plugin.html">Plugin</a></li><li><a href="PluginAdmin.html">PluginAdmin</a></li><li><a href="Prearchive.html">Prearchive</a></li><li><a href="Preference.html">Preference</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectAccessRequest.html">ProjectAccessRequest</a></li><li><a href="ProjectUserAccess.html">ProjectUserAccess</a></li><li><a href="Requestable.html">Requestable</a></li><li><a href="Resource.html">Resource</a></li><li><a href="Scan.html">Scan</a></li><li><a href="Search.html">Search</a></li><li><a href="SiteAdmin.html">SiteAdmin</a></li><li><a href="SiteWideConfig.html">SiteWideConfig</a></li><li><a href="Subject.html">Subject</a></li><li><a href="SystemAdmin.html">SystemAdmin</a></li><li><a href="UiConfig.html">UiConfig</a></li><li><a href="UISpawner.html">UISpawner</a></li><li><a href="UiTheme.html">UiTheme</a></li><li><a href="UserAdmin.html">UserAdmin</a></li><li><a href="UserAliasToken.html">UserAliasToken</a></li><li><a href="UserAuth.html">UserAuth</a></li><li><a href="UserAuthService.html">UserAuthService</a></li><li><a href="UserMgmt.html">UserMgmt</a></li><li><a href="UserResource.html">UserResource</a></li><li><a href="UserSessionMgmt.html">UserSessionMgmt</a></li><li><a href="Workflow.html">Workflow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callbackErrorOrThrow">callbackErrorOrThrow</a></li><li><a href="global.html#cleanseUrl">cleanseUrl</a></li><li><a href="global.html#getArchiveApi">getArchiveApi</a></li><li><a href="global.html#getAuthorizationHeader">getAuthorizationHeader</a></li><li><a href="global.html#getAutomationApi">getAutomationApi</a></li><li><a href="global.html#getDataProcessingApi">getDataProcessingApi</a></li><li><a href="global.html#getDicomConfig">getDicomConfig</a></li><li><a href="global.html#getDicomDumpApi">getDicomDumpApi</a></li><li><a href="global.html#getExperimentApi">getExperimentApi</a></li><li><a href="global.html#getImageAssessorApi">getImageAssessorApi</a></li><li><a href="global.html#getNextPage">getNextPage</a></li><li><a href="global.html#getOtherService">getOtherService</a></li><li><a href="global.html#getPluginAdmin">getPluginAdmin</a></li><li><a href="global.html#getPrearchiveApi">getPrearchiveApi</a></li><li><a href="global.html#getProjectApi">getProjectApi</a></li><li><a href="global.html#getResouceApi">getResouceApi</a></li><li><a href="global.html#getScanApi">getScanApi</a></li><li><a href="global.html#getSearchApi">getSearchApi</a></li><li><a href="global.html#getSiteAdmin">getSiteAdmin</a></li><li><a href="global.html#getSubjectApi">getSubjectApi</a></li><li><a href="global.html#getSystemAdmin">getSystemAdmin</a></li><li><a href="global.html#getUiConfig">getUiConfig</a></li><li><a href="global.html#getUserAdmin">getUserAdmin</a></li><li><a href="global.html#getUserAuth">getUserAuth</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#getWorkflowApi">getWorkflowApi</a></li><li><a href="global.html#methodHasNoBody">methodHasNoBody</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Dec 09 2020 11:55:57 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

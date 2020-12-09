@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: XnatAdmin/OtherService/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: XnatAdmin/OtherService/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import FileMover from './FileMover';
+import Email from './Email';
+import Audit from './Audit';
+import CatalogRefresh from './CatalogRefresh';
+
+/**
+ * the Aggregate class of the API Wrappers for miscellaneous jobs
+ */
+class OtherService {
+  constructor(jsXnat) {
+    this.jsXnat = jsXnat;
+  }
+
+  /**
+   * Get the File Mover API wrapper class
+   * @returns {FileMover} the File Mover API wrapper class
+   */
+  getFileMoverApi() {
+    return new FileMover(this.jsXnat);
+  }
+
+  /**
+   * Get the Email API wrapper class
+   * @returns {Email} the Email API wrapper class
+   */
+  getEmailApi() {
+    return new Email(this.jsXnat);
+  }
+
+  /**
+   * Get the Audit API wrapper class
+   * @returns {Audit} the Audit API wrapper class
+   */
+  getAuditApi() {
+    return new Audit(this.jsXnat);
+  }
+
+  /**
+   * Get the Catalog Refresh API wrapper class
+   * @returns {CatalogRefresh} the Catalog Refresh API wrapper class
+   */
+  getCatalogRefreshApi() {
+    return new CatalogRefresh(this.jsXnat);
+  }
+}
+
+export default OtherService;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Anonymization.html">Anonymization</a></li><li><a href="Archive.html">Archive</a></li><li><a href="Audit.html">Audit</a></li><li><a href="Automation.html">Automation</a></li><li><a href="CatalogRefresh.html">CatalogRefresh</a></li><li><a href="DataProcessing.html">DataProcessing</a></li><li><a href="DataTypeSchema.html">DataTypeSchema</a></li><li><a href="DicomConfig.html">DicomConfig</a></li><li><a href="DicomDump.html">DicomDump</a></li><li><a href="DicomScp.html">DicomScp</a></li><li><a href="Email.html">Email</a></li><li><a href="Experiment.html">Experiment</a></li><li><a href="FileMover.html">FileMover</a></li><li><a href="ImageAssessor.html">ImageAssessor</a></li><li><a href="module.exports.html">exports</a></li><li><a href="OtherService.html">OtherService</a></li><li><a href="Plugin.html">Plugin</a></li><li><a href="PluginAdmin.html">PluginAdmin</a></li><li><a href="Prearchive.html">Prearchive</a></li><li><a href="Preference.html">Preference</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectAccessRequest.html">ProjectAccessRequest</a></li><li><a href="ProjectUserAccess.html">ProjectUserAccess</a></li><li><a href="Requestable.html">Requestable</a></li><li><a href="Resource.html">Resource</a></li><li><a href="Scan.html">Scan</a></li><li><a href="Search.html">Search</a></li><li><a href="SiteAdmin.html">SiteAdmin</a></li><li><a href="SiteWideConfig.html">SiteWideConfig</a></li><li><a href="Subject.html">Subject</a></li><li><a href="SystemAdmin.html">SystemAdmin</a></li><li><a href="UiConfig.html">UiConfig</a></li><li><a href="UISpawner.html">UISpawner</a></li><li><a href="UiTheme.html">UiTheme</a></li><li><a href="UserAdmin.html">UserAdmin</a></li><li><a href="UserAliasToken.html">UserAliasToken</a></li><li><a href="UserAuth.html">UserAuth</a></li><li><a href="UserAuthService.html">UserAuthService</a></li><li><a href="UserMgmt.html">UserMgmt</a></li><li><a href="UserResource.html">UserResource</a></li><li><a href="UserSessionMgmt.html">UserSessionMgmt</a></li><li><a href="Workflow.html">Workflow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callbackErrorOrThrow">callbackErrorOrThrow</a></li><li><a href="global.html#cleanseUrl">cleanseUrl</a></li><li><a href="global.html#getArchiveApi">getArchiveApi</a></li><li><a href="global.html#getAuthorizationHeader">getAuthorizationHeader</a></li><li><a href="global.html#getAutomationApi">getAutomationApi</a></li><li><a href="global.html#getDataProcessingApi">getDataProcessingApi</a></li><li><a href="global.html#getDicomConfig">getDicomConfig</a></li><li><a href="global.html#getDicomDumpApi">getDicomDumpApi</a></li><li><a href="global.html#getExperimentApi">getExperimentApi</a></li><li><a href="global.html#getImageAssessorApi">getImageAssessorApi</a></li><li><a href="global.html#getNextPage">getNextPage</a></li><li><a href="global.html#getOtherService">getOtherService</a></li><li><a href="global.html#getPluginAdmin">getPluginAdmin</a></li><li><a href="global.html#getPrearchiveApi">getPrearchiveApi</a></li><li><a href="global.html#getProjectApi">getProjectApi</a></li><li><a href="global.html#getResouceApi">getResouceApi</a></li><li><a href="global.html#getScanApi">getScanApi</a></li><li><a href="global.html#getSearchApi">getSearchApi</a></li><li><a href="global.html#getSiteAdmin">getSiteAdmin</a></li><li><a href="global.html#getSubjectApi">getSubjectApi</a></li><li><a href="global.html#getSystemAdmin">getSystemAdmin</a></li><li><a href="global.html#getUiConfig">getUiConfig</a></li><li><a href="global.html#getUserAdmin">getUserAdmin</a></li><li><a href="global.html#getUserAuth">getUserAuth</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#getWorkflowApi">getWorkflowApi</a></li><li><a href="global.html#methodHasNoBody">methodHasNoBody</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Dec 09 2020 11:55:57 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: XnatAdmin/UserAuth/UserAliasToken.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: XnatAdmin/UserAuth/UserAliasToken.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import debug from 'debug';
+import { APP_NAME, CONTENT_TYPES, AUTH_METHODS } from '../../Common/Constant';
+import Requestable from '../../Common/Requestable';
+import { IllegalArgumentsError } from '../../Error';
+
+const log = debug(`${APP_NAME}:UserAliasToken`);
+
+/**
+ * Wrapper class for the User Alias related APIs
+ */
+class UserAliasToken extends Requestable {
+  /**
+   * Constructor
+   * @param {JsXnat} jsXnat
+   */
+  constructor(jsXnat) {
+    super(jsXnat);
+  }
+
+  /**
+   * User Alias Token Object
+   * @typedef UserAliasTokenObject
+   * @property {string} alias
+   * @property {string} xdatUserId
+   * @property {string} secret
+   * @property {boolean} singleUse
+   * @property {integer} estimatedExpirationTime
+   * @property {integer} timestamp
+   * @property {boolean} enabled
+   * @property {integer} created
+   * @property {string} id
+   * @property {integer} disabled
+   */
+
+  /**
+   * Issue A New User Alias Token
+   * @param {function} [cb] Callback function
+   * @return {UserAliasTokenObject} User Alias Token Object
+   */
+  async issueToken(cb = undefined) {
+    const res = await this._request(
+      'GET',
+      `/data/services/tokens/issue`,
+      undefined,
+      cb,
+      CONTENT_TYPES.json,
+      AUTH_METHODS.password
+    );
+    if (typeof res === 'object') {
+      return res;
+    } else {
+      return JSON.parse(res);
+    }
+  }
+
+  /**
+   * Issue A New User Alias Token For Another User
+   * @param {string} username username
+   * @param {function} [cb] Callback function
+   * @return {UserAliasTokenObject} User Alias Token Object
+   */
+  issueTokenForUser(username, cb = undefined) {
+    if (!username) {
+      throw new IllegalArgumentsError('username is required');
+    }
+
+    return this._request(
+      'GET',
+      `/data/services/tokens/issue/user/${username}`,
+      undefined,
+      cb
+    );
+  }
+
+  /**
+   * Validate A User Alias Token
+   * @param {string} token token
+   * @param {string} secret secret
+   * @param {function} [cb] Callback function
+   * @return {object}
+   */
+  validateToken(token, secret, cb = undefined) {
+    if (!token) {
+      throw new IllegalArgumentsError('token is required');
+    }
+    if (!secret) {
+      throw new IllegalArgumentsError('secret is required');
+    }
+    return this._request(
+      'GET',
+      `/data/services/tokens/validate/${token}/${secret}`,
+      undefined,
+      cb
+    );
+  }
+
+  /**
+   * Invalidate A User Alias Token
+   * @param {string} token token
+   * @param {string} secret secret
+   * @param {function} [cb] Callback function
+   * @return none
+   */
+  invalidateToken(token, secret, cb = undefined) {
+    if (!token) {
+      throw new IllegalArgumentsError('token is required');
+    }
+    if (!secret) {
+      throw new IllegalArgumentsError('secret is required');
+    }
+    return this._request(
+      'GET',
+      `/data/services/tokens/invalidate/${token}/${secret}`,
+      undefined,
+      cb
+    );
+  }
+}
+
+export default UserAliasToken;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Anonymization.html">Anonymization</a></li><li><a href="Archive.html">Archive</a></li><li><a href="Audit.html">Audit</a></li><li><a href="Automation.html">Automation</a></li><li><a href="CatalogRefresh.html">CatalogRefresh</a></li><li><a href="DataProcessing.html">DataProcessing</a></li><li><a href="DataTypeSchema.html">DataTypeSchema</a></li><li><a href="DicomConfig.html">DicomConfig</a></li><li><a href="DicomDump.html">DicomDump</a></li><li><a href="DicomScp.html">DicomScp</a></li><li><a href="Email.html">Email</a></li><li><a href="Experiment.html">Experiment</a></li><li><a href="FileMover.html">FileMover</a></li><li><a href="ImageAssessor.html">ImageAssessor</a></li><li><a href="module.exports.html">exports</a></li><li><a href="OtherService.html">OtherService</a></li><li><a href="Plugin.html">Plugin</a></li><li><a href="PluginAdmin.html">PluginAdmin</a></li><li><a href="Prearchive.html">Prearchive</a></li><li><a href="Preference.html">Preference</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectAccessRequest.html">ProjectAccessRequest</a></li><li><a href="ProjectUserAccess.html">ProjectUserAccess</a></li><li><a href="Requestable.html">Requestable</a></li><li><a href="Resource.html">Resource</a></li><li><a href="Scan.html">Scan</a></li><li><a href="Search.html">Search</a></li><li><a href="SiteAdmin.html">SiteAdmin</a></li><li><a href="SiteWideConfig.html">SiteWideConfig</a></li><li><a href="Subject.html">Subject</a></li><li><a href="SystemAdmin.html">SystemAdmin</a></li><li><a href="UiConfig.html">UiConfig</a></li><li><a href="UISpawner.html">UISpawner</a></li><li><a href="UiTheme.html">UiTheme</a></li><li><a href="UserAdmin.html">UserAdmin</a></li><li><a href="UserAliasToken.html">UserAliasToken</a></li><li><a href="UserAuth.html">UserAuth</a></li><li><a href="UserAuthService.html">UserAuthService</a></li><li><a href="UserMgmt.html">UserMgmt</a></li><li><a href="UserResource.html">UserResource</a></li><li><a href="UserSessionMgmt.html">UserSessionMgmt</a></li><li><a href="Workflow.html">Workflow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callbackErrorOrThrow">callbackErrorOrThrow</a></li><li><a href="global.html#cleanseUrl">cleanseUrl</a></li><li><a href="global.html#getArchiveApi">getArchiveApi</a></li><li><a href="global.html#getAuthorizationHeader">getAuthorizationHeader</a></li><li><a href="global.html#getAutomationApi">getAutomationApi</a></li><li><a href="global.html#getDataProcessingApi">getDataProcessingApi</a></li><li><a href="global.html#getDicomConfig">getDicomConfig</a></li><li><a href="global.html#getDicomDumpApi">getDicomDumpApi</a></li><li><a href="global.html#getExperimentApi">getExperimentApi</a></li><li><a href="global.html#getImageAssessorApi">getImageAssessorApi</a></li><li><a href="global.html#getNextPage">getNextPage</a></li><li><a href="global.html#getOtherService">getOtherService</a></li><li><a href="global.html#getPluginAdmin">getPluginAdmin</a></li><li><a href="global.html#getPrearchiveApi">getPrearchiveApi</a></li><li><a href="global.html#getProjectApi">getProjectApi</a></li><li><a href="global.html#getResouceApi">getResouceApi</a></li><li><a href="global.html#getScanApi">getScanApi</a></li><li><a href="global.html#getSearchApi">getSearchApi</a></li><li><a href="global.html#getSiteAdmin">getSiteAdmin</a></li><li><a href="global.html#getSubjectApi">getSubjectApi</a></li><li><a href="global.html#getSystemAdmin">getSystemAdmin</a></li><li><a href="global.html#getUiConfig">getUiConfig</a></li><li><a href="global.html#getUserAdmin">getUserAdmin</a></li><li><a href="global.html#getUserAuth">getUserAuth</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#getWorkflowApi">getWorkflowApi</a></li><li><a href="global.html#methodHasNoBody">methodHasNoBody</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Dec 09 2020 11:55:57 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

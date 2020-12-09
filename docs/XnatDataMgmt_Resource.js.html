@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: XnatDataMgmt/Resource.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: XnatDataMgmt/Resource.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import queryString from 'query-string';
+import debug from 'debug';
+import { APP_NAME, RESPONSE_FORMAT, CONTENT_TYPES } from '../Common/Constant';
+import Requestable from '../Common/Requestable';
+import { IllegalArgumentsError, UnsafeError } from '../Error';
+
+const log = debug(`${APP_NAME}:Resource`);
+
+/**
+ * Resource related API
+ */
+class Resource extends Requestable {
+  /**
+   * Constructor
+   * @param {JsXnat} jsXnat
+   */
+  constructor(jsXnat) {
+    super(jsXnat);
+  }
+  /**
+   * creates and returns an Resource object that has the exact same auth and apibase parmeter as the object provided
+   * @param {Requestable} any object that extends Requestable
+   * @returns {Resorce} new resource object
+   */
+  static createResource(entity) {
+    const { __auth, __apiBase } = entity;
+    return new Resource(__auth, __apiBase);
+  }
+
+  /**
+   * Get A Listing Of Resource Folders
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {array | string} sortBy Optional. Sort the returned results by one or more parameters in the Result array. Multiple parameters can be provided
+   * @param {string} format Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON
+   * @param {function} cb optional callback function
+   */
+  getFolders(path, sortBy = [], format = RESPONSE_FORMAT.json, cb = undefined) {
+    if (!sortBy) {
+      sortBy = [];
+    }
+    if (!Array.isArray(sortBy)) {
+      sortBy = sortBy.split(',');
+    }
+    if (!RESPONSE_FORMAT[format]) {
+      format = RESPONSE_FORMAT.json;
+    }
+    return this._request(
+      'GET',
+      `${path}/resources`,
+      {
+        sortBy: sortBy.join(','),
+        format,
+      },
+      cb
+    );
+  }
+
+  /**
+   * Get A Listing Of Resource Files Stored With A Entity specifed in the path parameter
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {array | string} sortBy Optional. Sort the returned results by one or more parameters in the Result array. Multiple parameters can be provided
+   * @param {string} format Optional. Set the format of the response. Format value can be json, html, xml, or csv. If not specified, default is JSON
+   * @param {function} cb optional callback function
+   */
+  getFiles(path, sortBy = [], format = RESPONSE_FORMAT.json, cb = undefined) {
+    if (!sortBy) {
+      sortBy = [];
+    }
+    if (!Array.isArray(sortBy)) {
+      sortBy = sortBy.split(',');
+    }
+    if (!RESPONSE_FORMAT[format]) {
+      format = RESPONSE_FORMAT.json;
+    }
+    return this._request(
+      'GET',
+      `${path}/files`,
+      {
+        sortBy: sortBy.join(','),
+        format,
+      },
+      cb
+    );
+  }
+
+  /**
+   * Get A Listing Of Resource Files Stored With A Entity specifed in the path parameter
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {string} resourceIdOrLabel resource id or label (folder name)
+   * @param {string} filename filename
+   * @param {function} cb optional callback function
+   */
+  getFile(path, resourceIdOrLabel, filename, cb = undefined) {
+    return this._request(
+      'GET',
+      `${path}/resources/${resourceIdOrLabel}/files/${filename}`,
+      undefined,
+      cb
+    );
+  }
+
+  /**
+   * Create A New Resource Folder
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {string} resourceLabel resource label (folder name)
+   * @param {string} format Optional. Specify a string format descriptor for this resource folder.
+   * @param {string | array} tags Optional. Specify a comma-separated list of tags for this resource folder.
+   * @param {string} contents Optional. Specify a string description of the resource folder's content.
+   * @param {function} cb optional callback function
+   * @returns none
+   */
+  createFolder(
+    path,
+    resourceLabel,
+    format = undefined,
+    tags = [],
+    content = undefined,
+    cb = undefined
+  ) {
+    if (!resourceLabel) {
+      throw new IllegalArgumentsError('resource label is required');
+    }
+    if (tags &amp;&amp; !Array.isArray(tags)) {
+      tags = tags.split(',');
+    }
+    const options = queryString.stringify({
+      format,
+      tags: tags ? tags.join(',') : undefined,
+      content,
+    });
+    return this._request(
+      'PUT',
+      `${path}/resources/${resourceLabel}?${options}`,
+      undefined,
+      cb
+    );
+  }
+
+  /**
+   * Upload A New Resource File
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {string} resourceIdOrLabel resource id or label
+   * @param {string} filename filename
+   * @param {Buffer} file file buffer (need to check if this is compatilable from browser)
+   * @param {boolean} overwrite Optional. overwrite the file if the file that has the same filename already exists in the same location
+   * @param {function} cb optional callback function
+   * @returns none
+   */
+  uploadFile(
+    path,
+    resourceIdOrLabel,
+    filename,
+    file,
+    overwrite = false,
+    cb = undefined
+  ) {
+    if (!resourceIdOrLabel) {
+      throw new IllegalArgumentsError('resource id or label is required');
+    }
+    if (!filename) {
+      throw new IllegalArgumentsError('filename is required');
+    }
+    if (!file) {
+      throw new IllegalArgumentsError('file is required');
+    }
+    return this._request(
+      'PUT',
+      `${path}/resources/${resourceIdOrLabel}/files/${filename}${
+        overwrite === true ? '?overwrite=true' : ''
+      }`,
+      file,
+      cb,
+      CONTENT_TYPES.binary
+    );
+  }
+
+  /**
+   * Delete A Resource Folder
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {string} resourceIdOrLabel resource id or label
+   * @param {boolean} safe Optional. if throw errors if files exists in the resource folder
+   * @param {function} cb optional callback function
+   * @returns none
+   */
+  async deleteFolder(path, resourceIdOrLabel, safe = false, cb = undefined) {
+    if (!resourceIdOrLabel) {
+      throw new IllegalArgumentsError('resource id or label is required');
+    }
+    if (safe) {
+      log('#@$#%3454354325432543253255343');
+      const {
+        ResultSet: { Result: res },
+      } = await this.getFolders(path);
+
+      const found = res.find(
+        (item) =>
+          item.label === resourceIdOrLabel ||
+          item.xnat_abstractresource_id === resourceIdOrLabel
+      );
+      if (found &amp;&amp; found.file_count > 0) {
+        throw new UnsafeError('the specified folder contains files');
+      }
+    }
+    return this._request(
+      'DELETE',
+      `${path}/resources/${resourceIdOrLabel}`,
+      undefined,
+      cb
+    );
+  }
+
+  /**
+   * Delete A Resource File
+   * @param {string} path the path of the entitiy for the resource (the path of Project, Subject, Image Assessor, or Scan)
+   * @param {string} resourceIdOrLabel resource id or label
+   * @param {string} filename filename
+   * @param {function} cb optional callback function
+   * @returns none
+   */
+  deleteFile(path, resourceIdOrLabel, filename, cb = undefined) {
+    if (!resourceIdOrLabel) {
+      throw new IllegalArgumentsError('resource id or label is required');
+    }
+    if (!filename) {
+      throw new IllegalArgumentsError('filename is required');
+    }
+    return this._request(
+      'DELETE',
+      `${path}/resources/${resourceIdOrLabel}/files/${filename}`,
+      undefined,
+      cb
+    );
+  }
+}
+
+export default Resource;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Anonymization.html">Anonymization</a></li><li><a href="Archive.html">Archive</a></li><li><a href="Audit.html">Audit</a></li><li><a href="Automation.html">Automation</a></li><li><a href="CatalogRefresh.html">CatalogRefresh</a></li><li><a href="DataProcessing.html">DataProcessing</a></li><li><a href="DataTypeSchema.html">DataTypeSchema</a></li><li><a href="DicomConfig.html">DicomConfig</a></li><li><a href="DicomDump.html">DicomDump</a></li><li><a href="DicomScp.html">DicomScp</a></li><li><a href="Email.html">Email</a></li><li><a href="Experiment.html">Experiment</a></li><li><a href="FileMover.html">FileMover</a></li><li><a href="ImageAssessor.html">ImageAssessor</a></li><li><a href="module.exports.html">exports</a></li><li><a href="OtherService.html">OtherService</a></li><li><a href="Plugin.html">Plugin</a></li><li><a href="PluginAdmin.html">PluginAdmin</a></li><li><a href="Prearchive.html">Prearchive</a></li><li><a href="Preference.html">Preference</a></li><li><a href="Project.html">Project</a></li><li><a href="ProjectAccessRequest.html">ProjectAccessRequest</a></li><li><a href="ProjectUserAccess.html">ProjectUserAccess</a></li><li><a href="Requestable.html">Requestable</a></li><li><a href="Resource.html">Resource</a></li><li><a href="Scan.html">Scan</a></li><li><a href="Search.html">Search</a></li><li><a href="SiteAdmin.html">SiteAdmin</a></li><li><a href="SiteWideConfig.html">SiteWideConfig</a></li><li><a href="Subject.html">Subject</a></li><li><a href="SystemAdmin.html">SystemAdmin</a></li><li><a href="UiConfig.html">UiConfig</a></li><li><a href="UISpawner.html">UISpawner</a></li><li><a href="UiTheme.html">UiTheme</a></li><li><a href="UserAdmin.html">UserAdmin</a></li><li><a href="UserAliasToken.html">UserAliasToken</a></li><li><a href="UserAuth.html">UserAuth</a></li><li><a href="UserAuthService.html">UserAuthService</a></li><li><a href="UserMgmt.html">UserMgmt</a></li><li><a href="UserResource.html">UserResource</a></li><li><a href="UserSessionMgmt.html">UserSessionMgmt</a></li><li><a href="Workflow.html">Workflow</a></li></ul><h3>Global</h3><ul><li><a href="global.html#callbackErrorOrThrow">callbackErrorOrThrow</a></li><li><a href="global.html#cleanseUrl">cleanseUrl</a></li><li><a href="global.html#getArchiveApi">getArchiveApi</a></li><li><a href="global.html#getAuthorizationHeader">getAuthorizationHeader</a></li><li><a href="global.html#getAutomationApi">getAutomationApi</a></li><li><a href="global.html#getDataProcessingApi">getDataProcessingApi</a></li><li><a href="global.html#getDicomConfig">getDicomConfig</a></li><li><a href="global.html#getDicomDumpApi">getDicomDumpApi</a></li><li><a href="global.html#getExperimentApi">getExperimentApi</a></li><li><a href="global.html#getImageAssessorApi">getImageAssessorApi</a></li><li><a href="global.html#getNextPage">getNextPage</a></li><li><a href="global.html#getOtherService">getOtherService</a></li><li><a href="global.html#getPluginAdmin">getPluginAdmin</a></li><li><a href="global.html#getPrearchiveApi">getPrearchiveApi</a></li><li><a href="global.html#getProjectApi">getProjectApi</a></li><li><a href="global.html#getResouceApi">getResouceApi</a></li><li><a href="global.html#getScanApi">getScanApi</a></li><li><a href="global.html#getSearchApi">getSearchApi</a></li><li><a href="global.html#getSiteAdmin">getSiteAdmin</a></li><li><a href="global.html#getSubjectApi">getSubjectApi</a></li><li><a href="global.html#getSystemAdmin">getSystemAdmin</a></li><li><a href="global.html#getUiConfig">getUiConfig</a></li><li><a href="global.html#getUserAdmin">getUserAdmin</a></li><li><a href="global.html#getUserAuth">getUserAuth</a></li><li><a href="global.html#getVersion">getVersion</a></li><li><a href="global.html#getWorkflowApi">getWorkflowApi</a></li><li><a href="global.html#methodHasNoBody">methodHasNoBody</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed Dec 09 2020 11:55:57 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
