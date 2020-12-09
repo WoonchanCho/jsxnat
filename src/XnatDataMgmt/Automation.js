@@ -9,7 +9,7 @@ const log = debug(`${APP_NAME}:Automation`);
 /**
  * Automation related API
  */
-class Automation extends Requestable {
+export default class Automation extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -90,5 +90,3 @@ class Automation extends Requestable {
     );
   }
 }
-
-export default Automation;

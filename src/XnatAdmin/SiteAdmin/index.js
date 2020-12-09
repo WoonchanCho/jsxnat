@@ -2,7 +2,7 @@ import SiteWideConfig from './SiteWideConfig';
 import Preference from './Preference';
 import DataTypeSchema from './DataTypeSchema';
 
-class SiteAdmin {
+export default class SiteAdmin {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -23,5 +23,3 @@ class SiteAdmin {
     return new DataTypeSchema(this.jsXnat);
   }
 }
-
-export default SiteAdmin;

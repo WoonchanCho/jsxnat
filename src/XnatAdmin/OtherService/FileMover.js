@@ -7,7 +7,7 @@ const log = debug(`${APP_NAME}:FileMover`);
 /**
  * the API Wrapper Class for the File Mover Service APIs
  */
-class FileMover extends Requestable {
+export default class FileMover extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -33,5 +33,3 @@ class FileMover extends Requestable {
     );
   }
 }
-
-export default FileMover;

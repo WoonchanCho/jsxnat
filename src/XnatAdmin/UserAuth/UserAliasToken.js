@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:UserAliasToken`);
 /**
  * Wrapper class for the User Alias related APIs
  */
-class UserAliasToken extends Requestable {
+export default class UserAliasToken extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -116,5 +116,3 @@ class UserAliasToken extends Requestable {
     );
   }
 }
-
-export default UserAliasToken;

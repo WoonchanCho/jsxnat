@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:Plugin`);
 /**
  * Wrapper class for the Subject related APIs
  */
-class Plugin extends Requestable {
+export default class Plugin extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -82,5 +82,3 @@ class Plugin extends Requestable {
     return this._request('POST', `/xapi/pluginOpenUrls/settings`, json, cb);
   }
 }
-
-export default Plugin;

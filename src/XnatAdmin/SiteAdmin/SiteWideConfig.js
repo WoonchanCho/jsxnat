@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:SiteWideConfig`);
 /**
  * Site-wide Configuration API
  */
-class SiteWideConfig extends Requestable {
+export default class SiteWideConfig extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -99,5 +99,3 @@ class SiteWideConfig extends Requestable {
     return this._request('GET', path, undefined, cb);
   }
 }
-
-export default SiteWideConfig;

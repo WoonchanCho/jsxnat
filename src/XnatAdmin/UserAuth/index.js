@@ -2,7 +2,7 @@ import UserSessionMgmt from './UserSessionMgmt';
 import UserAuthService from './UserAuthService';
 import UserAliasToken from './UserAliasToken';
 
-class UserAuth {
+export default class UserAuth {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -23,5 +23,3 @@ class UserAuth {
     return new UserAliasToken(this.jsXnat);
   }
 }
-
-export default UserAuth;

@@ -1,7 +1,7 @@
 import DicomScp from './DicomScp';
 import Anonymization from './Anonymization';
 
-class DicomConfig {
+export default class DicomConfig {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -18,5 +18,3 @@ class DicomConfig {
     return new Anonymization(this.jsXnat);
   }
 }
-
-export default DicomConfig;

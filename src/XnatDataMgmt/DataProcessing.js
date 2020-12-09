@@ -9,7 +9,7 @@ const log = debug(`${APP_NAME}:DataProcessing`);
 /**
  * Data Processing related API
  */
-class DataProcessing extends Requestable {
+export default class DataProcessing extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -173,5 +173,3 @@ class DataProcessing extends Requestable {
     );
   }
 }
-
-export default DataProcessing;

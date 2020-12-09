@@ -2,7 +2,7 @@ import Archive from './Archive';
 import Notification from './Notification';
 import Task from './Task';
 
-class SystemAdmin {
+export default class SystemAdmin {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -23,5 +23,3 @@ class SystemAdmin {
     return new Task(this.jsXnat);
   }
 }
-
-export default SystemAdmin;

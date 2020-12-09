@@ -10,7 +10,7 @@ const log = debug(`${APP_NAME}:Experiment`);
 /**
  * Experiment (Subject Assessor) related API
  */
-class Experiment extends Requestable {
+export default class Experiment extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -740,5 +740,3 @@ class Experiment extends Requestable {
     }
   }
 }
-
-export default Experiment;

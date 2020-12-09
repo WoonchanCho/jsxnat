@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:UserAuthService`);
 /**
  * User Auth Service API
  */
-class UserAuthService extends Requestable {
+export default class UserAuthService extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -28,5 +28,3 @@ class UserAuthService extends Requestable {
     return this._request('PUT', `/data/services/auth`, undefined, cb);
   }
 }
-
-export default UserAuthService;

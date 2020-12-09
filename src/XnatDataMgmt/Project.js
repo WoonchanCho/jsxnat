@@ -10,7 +10,7 @@ const log = debug(`${APP_NAME}:Project`);
 /**
  * Project related API
  */
-class Project extends Requestable {
+export default class Project extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -722,5 +722,3 @@ class Project extends Requestable {
     return Object.values(obj).find((c) => c == parseInt(code)) !== undefined;
   }
 }
-
-export default Project;

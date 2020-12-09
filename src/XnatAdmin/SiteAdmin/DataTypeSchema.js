@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:DataTypeSchema`);
 /**
  * Schema Api
  */
-class DataTypeSchema extends Requestable {
+export default class DataTypeSchema extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -131,5 +131,3 @@ class DataTypeSchema extends Requestable {
     );
   }
 }
-
-export default DataTypeSchema;

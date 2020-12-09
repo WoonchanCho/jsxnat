@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:Archive`);
 /**
  * Catalog Api
  */
-class Archive extends Requestable {
+export default class Archive extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -164,5 +164,3 @@ class Archive extends Requestable {
     );
   }
 }
-
-export default Archive;

@@ -1,6 +1,6 @@
 import Plugin from './Plugin';
 
-class PluginAdmin {
+export default class PluginAdmin {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -13,5 +13,3 @@ class PluginAdmin {
     return new Plugin(this.jsXnat);
   }
 }
-
-export default PluginAdmin;

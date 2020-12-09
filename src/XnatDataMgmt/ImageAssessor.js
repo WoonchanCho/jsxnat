@@ -10,7 +10,7 @@ const log = debug(`${APP_NAME}:ImageAssessor`);
 /**
  * Image Assessor related API
  */
-class ImageAssessor extends Requestable {
+export default class ImageAssessor extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -575,5 +575,3 @@ class ImageAssessor extends Requestable {
     }
   }
 }
-
-export default ImageAssessor;

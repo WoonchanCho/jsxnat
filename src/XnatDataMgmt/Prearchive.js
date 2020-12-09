@@ -10,7 +10,7 @@ const log = debug(`${APP_NAME}:Prearchive`);
 /**
  * Prearchive related API
  */
-class Prearchive extends Requestable {
+export default class Prearchive extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -366,5 +366,3 @@ class Prearchive extends Requestable {
     );
   }
 }
-
-export default Prearchive;

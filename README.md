@@ -83,6 +83,7 @@ Some REST APIs have mutiple methods defined in the differnt sub-classes for user
 There are three categories: XNAT Administration, XNAT Data Management, Plugins
 1. XNAT Administration
     - APIS for XNAT administrators
+    - 
 2. XNAT Data Management
     - APIs for Data Management (Projects, Subject, Experiment, Scans, etc.)
 3. Plugins (To be added in the future)
@@ -92,13 +93,36 @@ There are three categories: XNAT Administration, XNAT Data Management, Plugins
 └── JsXnat
     ├── XnatAdmin
     │   ├── SiteAdmin
+    │   │   ├── SiteWideConfig
+    │   │   ├── Preference
+    │   │   └── DataTypeSchema
     │   ├── SystemAdmin
+    │   │   ├── Archive
+    │   │   ├── Notification
+    │   │   └── Task
     │   ├── UserAdmin
+    │   │   ├── UserMgmt (TBD)
+    │   │   ├── UserResource (TBD)
+    │   │   ├── ProjectUserAccess (TBD)
+    │   │   └── ProjectAccessRequest (TBD)
     │   ├── UserAuth
+    │   │   ├── UserSessionMgmt (TBD)
+    │   │   ├── UserAuthService
+    │   │   └── UserAliasToken
     │   ├── PluginAdmin
+    │   │   └── Plugin
+    │   ├── UiConfig
+    │   │   ├── UiSpawner
+    │   │   ├── UiTheme
     │   ├── DicomConfig
+    │   │   ├── DicomScp
+    │   │   └── Anonymization
     │   └── OtherService
-    ├── XNATDataMgmt
+    │   │   ├── FileMover
+    │   │   ├── Email
+    │   │   ├── Audit
+    │   │   └── CatalogRefresh
+    ├── XnatDataMgmt
     │   ├── Project
     │   ├── Subject
     │   ├── Experiment

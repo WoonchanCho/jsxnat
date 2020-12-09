@@ -7,7 +7,7 @@ const log = debug(`${APP_NAME}:DicomDump`);
 /**
  * DicomDump related API
  */
-class DicomDump extends Requestable {
+export default class DicomDump extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -127,5 +127,3 @@ class DicomDump extends Requestable {
     );
   }
 }
-
-export default DicomDump;

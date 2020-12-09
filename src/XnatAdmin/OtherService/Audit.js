@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:Audit`);
 /**
  * the API Wrapper Class for the Audit APIs
  */
-class Audit extends Requestable {
+export default class Audit extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -52,5 +52,3 @@ class Audit extends Requestable {
     );
   }
 }
-
-export default Audit;

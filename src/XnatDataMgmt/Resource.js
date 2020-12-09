@@ -9,7 +9,7 @@ const log = debug(`${APP_NAME}:Resource`);
 /**
  * Resource related API
  */
-class Resource extends Requestable {
+export default class Resource extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -232,5 +232,3 @@ class Resource extends Requestable {
     );
   }
 }
-
-export default Resource;

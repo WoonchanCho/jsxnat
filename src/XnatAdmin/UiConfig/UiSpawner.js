@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:UISpawner`);
 /**
  * the API Wrapper Class for the UI Spawner APIs
  */
-class UISpawner extends Requestable {
+export default class UISpawner extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -39,5 +39,3 @@ class UISpawner extends Requestable {
     return this._request('GET', path, undefined, cb);
   }
 }
-
-export default UISpawner;

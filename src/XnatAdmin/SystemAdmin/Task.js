@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:Preference`);
 /**
  * Preferences Service API
  */
-class Preference extends Requestable {
+export default class Preference extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -93,5 +93,3 @@ class Preference extends Requestable {
     );
   }
 }
-
-export default Preference;

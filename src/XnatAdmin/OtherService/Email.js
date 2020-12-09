@@ -9,7 +9,7 @@ const log = debug(`${APP_NAME}:Email`);
 /**
  * the API Wrapper Class for the Email APIs
  */
-class Email extends Requestable {
+export default class Email extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -60,5 +60,3 @@ class Email extends Requestable {
     );
   }
 }
-
-export default Email;

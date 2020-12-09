@@ -3,7 +3,7 @@ import UserResource from './UserResource';
 import ProjectUserAccess from './ProjectUserAccess';
 import ProjectAccessRequest from './ProjectAccessRequest';
 
-class UserAdmin {
+export default class UserAdmin {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -28,5 +28,3 @@ class UserAdmin {
     return new ProjectAccessRequest(this.jsXnat);
   }
 }
-
-export default UserAdmin;

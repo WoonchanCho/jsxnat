@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:DicomScp`);
 /**
  * the API Wrapper Class for the DicomScp APIs
  */
-class DicomScp extends Requestable {
+export default class DicomScp extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -159,5 +159,3 @@ class DicomScp extends Requestable {
     );
   }
 }
-
-export default DicomScp;

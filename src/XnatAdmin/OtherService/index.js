@@ -6,7 +6,7 @@ import CatalogRefresh from './CatalogRefresh';
 /**
  * the Aggregate class of the API Wrappers for miscellaneous jobs
  */
-class OtherService {
+export default class OtherService {
   constructor(jsXnat) {
     this.jsXnat = jsXnat;
   }
@@ -43,5 +43,3 @@ class OtherService {
     return new CatalogRefresh(this.jsXnat);
   }
 }
-
-export default OtherService;

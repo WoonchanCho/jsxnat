@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:UiTheme`);
 /**
  * the API Wrapper Class for the UI Theme APIs
  */
-class UiTheme extends Requestable {
+export default class UiTheme extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -25,5 +25,3 @@ class UiTheme extends Requestable {
     return this._request('GET', `/xapi/theme`, undefined, cb);
   }
 }
-
-export default UiTheme;

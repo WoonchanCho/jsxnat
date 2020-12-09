@@ -9,7 +9,7 @@ const log = debug(`${APP_NAME}:Anonymization`);
 /**
  * the API Wrapper Class for the Anonymization APIs
  */
-class Anonymization extends Requestable {
+export default class Anonymization extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -158,5 +158,3 @@ class Anonymization extends Requestable {
     );
   }
 }
-
-export default Anonymization;

@@ -8,7 +8,7 @@ const log = debug(`${APP_NAME}:CatalogRefresh`);
 /**
  * Catalog Refresh API
  */
-class CatalogRefresh extends Requestable {
+export default class CatalogRefresh extends Requestable {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -93,5 +93,3 @@ class CatalogRefresh extends Requestable {
     );
   }
 }
-
-export default CatalogRefresh;

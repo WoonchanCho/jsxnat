@@ -1,7 +1,7 @@
 import UiSpawner from './UiSpawner';
 import UiTheme from './UiTheme';
 
-class UiConfig {
+export default class UiConfig {
   /**
    * Constructor
    * @param {JsXnat} jsXnat
@@ -18,5 +18,3 @@ class UiConfig {
     return new UiTheme(this.jsXnat);
   }
 }
-
-export default UiConfig;
