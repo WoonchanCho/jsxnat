@@ -74,6 +74,50 @@ projectApi.getProjects().then(res => {
 </script>
 ```
 
+### Library Structure
+JsXnat is the main class for accessing all the sub classes and the API methods in them.
+There are more than 200 APIs defined in the XNAT, so I created the following sub structure for you to easily navigate the APIs you want. The stucture almost resembles the structure of [XNAT REST API Directory] (https://wiki.xnat.org/display/XAPI/XNAT+REST+API+Directory) but there are some difference.
+
+Some REST APIs have mutiple methods defined in the differnt sub-classes for users to easily find them.)
+
+There are three categories: XNAT Administration, XNAT Data Management, Plugins
+1. XNAT Administration
+    - APIS for XNAT administrators
+2. XNAT Data Management
+    - APIs for Data Management (Projects, Subject, Experiment, Scans, etc.)
+3. Plugins (To be added in the future)
+    - APIs for 3rd party plugins
+
+```bash
+└── JsXnat
+    ├── XnatAdmin
+    │   ├── SiteAdmin
+    │   ├── SystemAdmin
+    │   ├── UserAdmin
+    │   ├── UserAuth
+    │   ├── PluginAdmin
+    │   ├── DicomConfig
+    │   └── OtherService
+    ├── XNATDataMgmt
+    │   ├── Project
+    │   ├── Subject
+    │   ├── Experiment
+    │   ├── Scan
+    │   ├── ImageAssessor
+    │   ├── Resource
+    │   ├── Archive
+    │   ├── Search
+    │   ├── DataProcessing
+    │   ├── Automation
+    │   ├── Prearchive
+    │   └── Workflow
+    └──  Plugins
+
+```
+
+### User Alias Token
+
+
 ### CORS
 To use the JsXnat in the client side (e.g., browser), you should configure your XNAT tomcat sevrer and Spring Security to allow your XNAT to support the Cross Origin Resource Request (CORS).
 
