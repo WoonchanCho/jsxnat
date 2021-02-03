@@ -19,6 +19,7 @@
     "build:web": "microbundle --external none --target web --output dist/web --name JsXnat",
     "build:node": "microbundle --external none --target node  --output dist/node",
     "build:docs": "npx jsdoc -c jsdoc.conf.js -r README.md",
+    "build:type": "tsc",
     "watch:doc-src": "npx nodemon --exec 'yarn build:docs' --watch src",
     "watch:doc-output": "npx livereload out",
     "watch:docs": "yarn watch:doc-output & yarn watch:doc-src",
@@ -28,7 +29,8 @@
     "livereload": "^0.9.1",
     "microbundle": "^0.12.4",
     "nodemon": "^2.0.6",
-    "shx": "^0.3.3"
+    "shx": "^0.3.3",
+    "typescript": "^4.1.3"
   },
   "dependencies": {
     "debug": "^4.3.1",
