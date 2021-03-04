@@ -1,11 +1,9 @@
 //del
 import fs from 'fs';
 
-import debug from 'debug';
 import { APP_NAME } from './Common/Constant';
 import JsXnat from './index';
 import PreArchive from './XnatDataMgmt/Prearchive';
-const log = debug(`${APP_NAME}:test`);
 
 (async () => {
   const jsXnat = new JsXnat('http://localhost:8081', 'admin', 'admin');

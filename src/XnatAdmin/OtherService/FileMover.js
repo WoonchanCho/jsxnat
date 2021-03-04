@@ -1,8 +1,5 @@
-import debug from 'debug';
-import { APP_NAME, CONTENT_TYPES } from '../../Common/Constant';
+import { CONTENT_TYPES } from '../../Common/Constant';
 import Requestable from '../../Common/Requestable';
-
-const log = debug(`${APP_NAME}:FileMover`);
 
 /**
  * the API Wrapper Class for the File Mover Service APIs

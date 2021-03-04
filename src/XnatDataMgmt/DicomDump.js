@@ -1,8 +1,5 @@
-import debug from 'debug';
-import { APP_NAME, RESPONSE_FORMAT } from '../Common/Constant';
+import { RESPONSE_FORMAT } from '../Common/Constant';
 import Requestable from '../Common/Requestable';
-
-const log = debug(`${APP_NAME}:DicomDump`);
 
 /**
  * DicomDump related API

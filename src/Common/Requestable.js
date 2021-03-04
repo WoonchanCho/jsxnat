@@ -1,7 +1,6 @@
 import 'isomorphic-form-data';
 import fetch from 'isomorphic-unfetch';
 import queryString from 'query-string';
-import debug from 'debug';
 import { APP_NAME, CONTENT_TYPES } from './Constant';
 import {
   ResponseError,
@@ -12,7 +11,6 @@ import {
   IllegalArgumentsError,
 } from '../Error';
 
-const log = debug(`${APP_NAME}:Requestable`);
 /**
  * Requestable wraps the logic for making http requests to the API
  */

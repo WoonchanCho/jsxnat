@@ -1,6 +1,5 @@
-import debug from 'debug';
 import { Base64 } from 'js-base64';
-import { APP_NAME, AUTH_METHODS } from './Common/Constant';
+import { AUTH_METHODS } from './Common/Constant';
 import { cleanseUrl } from './Common/Util';
 import SiteAdmin from './XnatAdmin/SiteAdmin';
 import SystemAdmin from './XnatAdmin/SystemAdmin';
@@ -23,8 +22,6 @@ import Automation from './XnatDataMgmt/Automation';
 import Prearchive from './XnatDataMgmt/Prearchive';
 import DicomDump from './XnatDataMgmt/DicomDump';
 import Workflow from './XnatDataMgmt/Workflow';
-
-const log = debug(`${APP_NAME}:JsXnat`);
 
 /**
  * Auth

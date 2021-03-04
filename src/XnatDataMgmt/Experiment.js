@@ -1,11 +1,8 @@
 import queryString from 'query-string';
-import debug from 'debug';
-import { APP_NAME, CONTENT_TYPES, RESPONSE_FORMAT } from '../Common/Constant';
+import { CONTENT_TYPES, RESPONSE_FORMAT } from '../Common/Constant';
 import Requestable from '../Common/Requestable';
 import { IllegalArgumentsError } from '../Error';
 import Resource from './Resource';
-
-const log = debug(`${APP_NAME}:Experiment`);
 
 /**
  * Experiment (Subject Assessor) related API

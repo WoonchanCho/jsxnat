@@ -1,11 +1,8 @@
 import queryString from 'query-string';
-import debug from 'debug';
-import { APP_NAME, RESPONSE_FORMAT } from '../Common/Constant';
+import { RESPONSE_FORMAT } from '../Common/Constant';
 import Requestable from '../Common/Requestable';
 import Resource from './Resource';
 import DicomDump from './DicomDump';
-
-const log = debug(`${APP_NAME}:Scan`);
 
 /**
  * Scan related API

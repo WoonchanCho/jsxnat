@@ -1,9 +1,5 @@
-import debug from 'debug';
-import { APP_NAME } from '../../Common/Constant';
 import Requestable from '../../Common/Requestable';
 import { IllegalArgumentsError } from '../../Error';
-
-const log = debug(`${APP_NAME}:CatalogRefresh`);
 
 /**
  * Catalog Refresh API

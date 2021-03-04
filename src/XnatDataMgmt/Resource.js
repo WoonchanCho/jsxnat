@@ -1,10 +1,7 @@
 import queryString from 'query-string';
-import debug from 'debug';
-import { APP_NAME, RESPONSE_FORMAT, CONTENT_TYPES } from '../Common/Constant';
+import { RESPONSE_FORMAT, CONTENT_TYPES } from '../Common/Constant';
 import Requestable from '../Common/Requestable';
 import { IllegalArgumentsError, UnsafeError } from '../Error';
-
-const log = debug(`${APP_NAME}:Resource`);
 
 /**
  * Resource related API

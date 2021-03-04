@@ -1,8 +1,5 @@
 import { DOMImplementation, XMLSerializer } from 'xmldom';
-import debug from 'debug';
 import { APP_NAME } from './Constant';
-
-const log = debug(`${APP_NAME}:XmlParser`);
 
 class XmlParser {
   __addChildNode(doc, parent, key, value) {
