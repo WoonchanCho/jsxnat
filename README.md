@@ -21,59 +21,74 @@ yarn add jsxnat
 
 ## Usage
 
+### Authentication Method
+There are 3 authentication methods available.
+1. noAuth
+This is used when the web app that uses this library is packaged into the XNAT plugin and it is launched in the same context of the XNAT node that it points to. In this case, seprate authentication is not needed.
+e.g., new JsXnat('noAuth', '/');
+2. password
+Username and password provided is used for the XNAT authentication. Each XNAT Rest API call is independent and run in the different session.
+e.g., new JsXnat('password', 'http://localhost:8080', { username: 'username', password: 'password' });
+3. token
+Username and password provided is used for the XNAT authentication. Before the first XNAT method call, an alias token is created and this will be used in every subsequent XNAT rest API call. The token creation and recreation after expiration is internally managed.
+e.g., new JsXnat('token', 'http://localhost:8080', { username: 'username', password: 'password' });
+
+### Output
+The output format of XNAT rest API call (via corresponding wrapper class method) is JSON by default.
+```javascript
+...
+const projectApi = jsXnat.getProjectApi();
+      projectApi
+        .getProjects()
+        .then((res) => {
+          console.log(res.ResultSet.Result);
+        })
+```
+[
+  {
+    pi_firstname: '',
+    secondary_ID: 'Subj_001',
+    pi_lastname: '',
+    name: 'Sample Project',
+    description: '',
+    ID: 'Subj_001',
+    URI: '/data/projects/Subj_001'
+  },
+  ...
+]
+
 ### Import
 
 #### Node.js with the CommonJS module system
 ```javascript
 const JsXnat = require('jsxnat');
-
-var jsXnat = new JsXnat('http://localhost:8080', 'username', 'password');
-const projectApi = jsXnat.getProjectApi();
-projectApi.getProjects().then(res => {
-  console.log(res);
-}).catch(err => {
-  console.log(err);
-});
 ```
 
 #### Node.js with the ES6 module system
 ```javascript
 import JsXnat from 'jsxnat';
-
-var jsXnat = new JsXnat('http://localhost:8080', 'username', 'password');
-const projectApi = jsXnat.getProjectApi();
-projectApi.getProjects().then(res => {
-  console.log(res);
-}).catch(err => {
-  console.log(err);
-});
 ```
+
 
 #### Browser or Electron with the ES6 module system (with a build tool)
 ```javascript
 import JsXnat from 'jsxnat/web/jsxnat.js';
-
-var jsXnat = new JsXnat('http://localhost:8080', 'username', 'password');
-const projectApi = jsXnat.getProjectApi();
-projectApi.getProjects().then(res => {
-  console.log(res);
-}).catch(err => {
-  console.log(err);
-});
 ```
 
 ### Browser or Electron with HTML
 ```html
 <script src="https://unpkg.com/jsxnat@0.0.1/dist/web/jsxnat.umd.js"></script>
-<script>
-  var jsXnat = new JsXnat('http://localhost:8080', 'username', 'password');
-  const projectApi = jsXnat.getProjectApi();
-  projectApi.getProjects().then(res => {
-    console.log(res);
-  }).catch(err => {
-    console.log(err);
-  });
-</script>
+```
+
+### Sample Usage
+```javascript
+var jsXnat = new JsXnat('password', 'http://localhost:8080', { username: 'username', password: 'password' });
+const projectApi = jsXnat.getProjectApi();
+projectApi.getProjects().then(res => {
+  console.log(res);
+}).catch(err => {
+  console.log(err);
+});
 ```
 
 ### Library Structure
@@ -85,9 +100,25 @@ Some REST APIs have mutiple methods defined in the differnt sub-classes for user
 There are three categories: XNAT Administration, XNAT Data Management, Plugins
 1. XNAT Administration
     - APIS for XNAT administrators
-    - 
+    - two level object should be retrieved to use a method.
+    e.g., Take a getSiteWideConfig as an example.
+    ```javascript
+    const jsXnat = new JsXnat(...);
+    const siteAdmin = jsXnat.getSiteAdmin();
+    const siteConfigApi = siteAdmin.getSiteConfigApi();
+    siteConfigApi.getSiteConfig()
+    ```
+
 2. XNAT Data Management
     - APIs for Data Management (Projects, Subject, Experiment, Scans, etc.)
+    - Just one level object should be retirieved to use a method
+    e.g., Take a getExperimentsInProject as an example.
+    ```javascript
+    const jsXnat = new JsXnat(...);
+    const experimentApi = jsXnat.getExperimentApi();
+    experimentApi.getExperimentsInProject(projectId);
+    ```
+
 3. Plugins (To be added in the future)
     - APIs for 3rd party plugins
 
@@ -95,7 +126,7 @@ There are three categories: XNAT Administration, XNAT Data Management, Plugins
 └── JsXnat
     ├── XnatAdmin
     │   ├── SiteAdmin
-    │   │   ├── SiteWideConfig
+    │   │   ├── SiteWideConfig (jsXnat.getSiteAdmin().getSiteConfigApi())
     │   │   ├── Preference
     │   │   └── DataTypeSchema
     │   ├── SystemAdmin
@@ -125,11 +156,11 @@ There are three categories: XNAT Administration, XNAT Data Management, Plugins
     │   │   ├── Audit
     │   │   └── CatalogRefresh
     ├── XnatDataMgmt
-    │   ├── Project
-    │   ├── Subject
-    │   ├── Experiment
-    │   ├── Scan
-    │   ├── ImageAssessor
+    │   ├── Project (jsXnat.getProjectApi())
+    │   ├── Subject (jsXnat.getSubjectApi())
+    │   ├── Experiment (jsXnat.getExperimentApi())
+    │   ├── Scan (jsXnat.getProjectApi())
+    │   ├── ImageAssessor (jsXnat.ImageAssessorApi())
     │   ├── Resource
     │   ├── Archive
     │   ├── Search
