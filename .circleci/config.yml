@@ -1,9 +1,19 @@
 orbs: # declare what orbs we are going to use
-  node: circleci/node@4.0.0
+  node: circleci/node@4.2.0
 
 version: 2.1 # using 2.1 provides access to orbs and other features
 
+jobs:
+  install-node-example:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+      - run: yarn test
+
 workflows:
-  app-tests:
+  test_my_app:
     jobs:
-      - node/test
+      - install-node-example
