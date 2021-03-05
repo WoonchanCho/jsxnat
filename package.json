@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.3",
+    "eslint": "^7.21.0",
     "esm": "^3.2.25",
     "jsdoc": "^3.6.6",
     "livereload": "^0.9.1",
@@ -52,8 +53,6 @@
     "url": "https://github.com/WoonchanCho/jsxnat.git"
   },
   "release": {
-    "branches": [
-      "master"
-    ]
+    "branches": ["master"]
   }
 }
