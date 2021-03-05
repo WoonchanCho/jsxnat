@@ -52,7 +52,7 @@ class XmlParser {
     });
 
     const xmlString = new XMLSerializer().serializeToString(doc);
-    log(xmlString);
+    // log(xmlString);
     return xmlString;
   }
 }

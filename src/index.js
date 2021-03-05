@@ -22,21 +22,43 @@ import Automation from './XnatDataMgmt/Automation';
 import Prearchive from './XnatDataMgmt/Prearchive';
 import DicomDump from './XnatDataMgmt/DicomDump';
 import Workflow from './XnatDataMgmt/Workflow';
+import { IllegalArgumentsError } from './Error';
 
 /**
  * Auth
  * @typedef {Object} Auth
- * @property {} authMethod -
+ * @property {string} authMethod - Auth method: either password, token or noAuth
  * @property {string} [username] - Valid XNAT username
  * @property {string} [password] - Valid XNAT password
- * @property {UserAliasTokenObject} [token] - token object
  */
 class Auth {
-  constructor(username, password, authMethod = AUTH_METHODS.token) {
-    this.username = username;
-    this.password = password;
-    this.authMethod =
-      authMethod === AUTH_METHODS.password ? authMethod : AUTH_METHODS.token;
+  constructor(authMethod, username, password) {
+    if (!AUTH_METHODS[authMethod]) {
+      throw new IllegalArgumentsError(
+        `the auth method provided is not valid: ${this.authMethod}`
+      );
+    }
+
+    this.authMethod = authMethod;
+
+    if (
+      this.authMethod === AUTH_METHODS.password ||
+      this.authMethod === AUTH_METHODS.token
+    ) {
+      if (!username) {
+        throw new IllegalArgumentsError(
+          `username is required when the auth method type is ${this.authMethod}`
+        );
+      }
+      this.username = username;
+
+      if (!password) {
+        throw new IllegalArgumentsError(
+          `password is required when the auth method type is ${this.authMethod}`
+        );
+      }
+      this.password = password;
+    }
   }
 }
 
@@ -46,14 +68,19 @@ class Auth {
 export default class JsXnat {
   /**
    * Intialize the basic paramemters for accessing an XNAT node
+   * @param {string} [authMethod='noAuth'] - Auth method: either noAuth, token, or password (password is not preferred in most cases.)
    * @param {string} basePath - the XNAT base URL e.g. https://mirrir.wustl.edu
-   * @param {string} username - Valid XNAT username
-   * @param {string} password - Valid XNAT password
-   * @param {string} [authMethod='token'] Auth Method: either password or token
+   * @param {Object} [options={}] - additional options depending on the auth method
+   * @param {string} options.username - XNAT username. Required when authMethod is password or token
+   * @param {string} options.password - XNAT password. Required when authMethod is password or token
    */
-  constructor(basePath, username, password, authMethod = AUTH_METHODS.token) {
+  constructor(authMethod = AUTH_METHODS.noAuth, basePath, options = {}) {
+    this.auth = new Auth(authMethod, options.username, options.password);
+
+    if (!basePath) {
+      throw new IllegalArgumentsError(`the base path is required`);
+    }
     this.basePath = cleanseUrl(basePath);
-    this.auth = new Auth(username, password, authMethod);
   }
 
   async refreshToken() {
@@ -76,6 +103,10 @@ export default class JsXnat {
   async __validateAuth() {}
 
   async __getCredential(requiredAuthMethod) {
+    if (this.authMethod === AUTH_METHODS.noAuth) {
+      return undefined;
+    }
+
     const { authMethod, username, password, token } = this.auth;
     if (
       requiredAuthMethod === AUTH_METHODS.password ||
@@ -103,6 +134,9 @@ export default class JsXnat {
    * @returns {string} authorizatio header
    */
   async getAuthorizationHeader(requiredAuthMethod = undefined) {
+    if (this.auth.authMethod === AUTH_METHODS.noAuth) {
+      return '';
+    }
     const credential = await this.__getCredential(requiredAuthMethod);
     return 'Basic ' + Base64.encode(credential[0] + ':' + credential[1]);
   }
@@ -165,7 +199,7 @@ export default class JsXnat {
 
   /**
    * Get the UI Configuration group class
-   * @returns {UserAdmin} a Class grouping the API wrappers related to UI-Configuration jobs
+   * @returns {UiConfig} a Class grouping the API wrappers related to UI-Configuration jobs
    */
   getUiConfig() {
     return new UiConfig(this);
@@ -231,7 +265,7 @@ export default class JsXnat {
    * Get the Resource API wrapper class
    * @returns {Resource} the Resource API wrapper class
    */
-  getResouceApi() {
+  getResourceApi() {
     return new Resource(this);
   }
 

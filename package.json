@@ -23,14 +23,19 @@
     "watch:doc-src": "npx nodemon --exec 'yarn build:docs' --watch src",
     "watch:doc-output": "npx livereload out",
     "watch:docs": "yarn watch:doc-output & yarn watch:doc-src",
-    "clean": "shx rm -rf docs && shx rm -rf dist"
+    "clean": "shx rm -rf docs && shx rm -rf dist",
+    "test": "mocha -r esm"
   },
   "devDependencies": {
+    "chai": "^4.3.3",
+    "eslint": "^7.21.0",
     "esm": "^3.2.25",
     "jsdoc": "^3.6.6",
     "livereload": "^0.9.1",
     "microbundle": "^0.12.4",
+    "mocha": "^8.3.0",
     "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
     "shx": "^0.3.3",
     "typescript": "^4.1.3"
   },

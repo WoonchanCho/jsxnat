@@ -172,7 +172,7 @@ class Requestable {
     if (Object.keys(queryParams).length > 0) {
       url = `${url}?${queryString.stringify(queryParams)}`;
     }
-    log(`${config.method} to ${url}`);
+    // log(`${config.method} to ${url}`);
     let responseData;
     try {
       const response = await fetch(url, config);
@@ -263,15 +263,15 @@ function callbackErrorOrThrow(cb, path, object) {
     const { status, statusText, url } = object;
     const message = `${status} error making request to ${url}: "${statusText}"`;
     error = new ResponseError(message, path, object);
-    log(`${message} ${JSON.stringify(object.data)}`);
+    // log(`${message} ${JSON.stringify(object.data)}`);
   } else {
     error = object;
   }
   if (cb) {
-    log('Calling the callback function provided', cb.name);
+    // log('Calling the callback function provided', cb.name);
     cb(error);
   } else {
-    log('Throwing error');
+    // log('Throwing error');
     throw error;
   }
 }
@@ -283,7 +283,7 @@ function getResponseContentType(response) {
 
 async function getResponseData(response) {
   const contentType = getResponseContentType(response);
-  log('response content-type', contentType);
+  // log('response content-type', contentType);
   let responseData = undefined;
   if (contentType === 'application/json') {
     responseData = await response.json();

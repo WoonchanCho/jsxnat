@@ -843,7 +843,7 @@ import PreArchive from './XnatDataMgmt/Prearchive';
 
     // log(await uiSpawnerApi.getElementNamespaces());
     // log(await uiSpawnerApi.getElementIdsInNamespace());
-    log(await userAuthServiceApi.authenticate());
+    // log(await userAuthServiceApi.authenticate());
   } catch (err) {
     console.log(err);
   }
